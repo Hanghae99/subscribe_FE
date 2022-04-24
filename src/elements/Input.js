@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Input = (props) => {
-  const { width, height } = props;
+  const { width, height, onChange } = props;
   const styles = { width, height };
-  return <InfoInput {...styles}></InfoInput>;
+  return <InfoInput {...styles} onChange={onChange}></InfoInput>;
 };
 
 const InfoInput = styled.input`

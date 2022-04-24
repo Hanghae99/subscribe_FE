@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Grid = (props) => {
-  const { width, height, margin, border, radius, isFlex, padding } = props;
+  const { width, height, margin, border, radius, isFlex, padding, onClick } =
+    props;
   const styles = {
     width,
     height,
@@ -13,7 +14,11 @@ const Grid = (props) => {
     padding,
   };
 
-  return <Box {...styles}>{props.children}</Box>;
+  return (
+    <Box {...styles} onClick={onClick}>
+      {props.children}
+    </Box>
+  );
 };
 
 const Box = styled.div`
