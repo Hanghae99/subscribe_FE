@@ -12,8 +12,11 @@ const logOut = createAction(LOGOUT, (userInfo) => ({ userInfo }));
 const isLogin = createAction(ISLOGIN, (token) => ({ token }));
 
 const initialState = {
-  userName: "asdf1000",
+  userId: 1,
   nickname: "9duck9duck",
+  userLevel: 3,
+  userExp: 200,
+  userExpPercent: "20%",
 };
 
 const signUpDB = () => {
@@ -30,9 +33,8 @@ const isLogInDB = () => {
 
 export default handleActions(
   {
-    [SIGNUP]: (state, action) => produce(state, (draft) => {}),
-    [LOGIN]: (state, action) => produce(state, (draft) => {}),
+    [ISLOGIN]: (state, action) => produce(state, (draft) => {}),
     [LOGOUT]: (state, action) => produce(state, (draft) => {}),
   },
-  []
+  initialState
 );
