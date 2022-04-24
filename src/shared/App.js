@@ -5,6 +5,8 @@ import SignUp from "../page/SignUp";
 import MyPage from "./../page/MyPage";
 import Main from "../page/Main";
 import Detail from "./../page/Detail";
+import Board from "./../page/Board";
+import PostDetail from "./../page/PostDetail";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/board" element={<Board />} />
+        <Route path="/postdetail" element={<PostDetail />} />
       </Routes>
     </BrowserRouter>
   );
