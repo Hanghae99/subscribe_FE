@@ -15,14 +15,14 @@ const Header = () => {
       <Grid border="1px solid black" width="130px" isFlex>
         {/* 임시 온클릭입니다 */}
         <Grid
-          onClick={() => {
+          _onClick={() => {
             navigate("/login");
           }}
         >
           로그인
         </Grid>
         <Grid
-          onClick={() => {
+          _onClick={() => {
             navigate("/signup");
           }}
         >
