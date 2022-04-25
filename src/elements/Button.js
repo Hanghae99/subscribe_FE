@@ -2,19 +2,33 @@ import React from "react";
 import styled from "styled-components";
 
 const Button = (props) => {
-  const { width, height, margin, bgColor, color, border, radius, _onClick, children } = props;
+  const {
+    width,
+    height,
+    margin,
+    bgColor,
+    color,
+    border,
+    radius,
+    _onClick,
+    children,
+  } = props;
   const styles = { width, height, bgColor, color, border, margin, radius };
 
-  return <Btn onClick={_onClick} {...styles}>{children}</Btn>;
+  return (
+    <Btn onClick={_onClick} {...styles}>
+      {children}
+    </Btn>
+  );
 };
 Button.defaultProps = {
   children: null,
   _onClick: () => {},
-  width: '100%',
-  height: '45px',
-  bgColor: 'transparent',
-  color: '#212121',
-  border: '1px solid #212121',
+  width: "100%",
+  height: "45px",
+  bgColor: "transparent",
+  color: "#212121",
+  border: "1px solid #212121",
   radius: false,
   margin: false,
 };
