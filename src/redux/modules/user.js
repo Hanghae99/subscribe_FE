@@ -19,15 +19,15 @@ const initialState = {
   userExpPercent: "20%",
 };
 
-const signUpDB = () => {
+export const signUpDB = (userInfo) => {
   return function (dispatch, getState) {};
 };
 
-const logInDB = () => {
+export const logInDB = () => {
   return function (dispatch, getState) {};
 };
 
-const isLogInDB = () => {
+export const isLogInDB = () => {
   return function (dispatch, getState) {};
 };
 

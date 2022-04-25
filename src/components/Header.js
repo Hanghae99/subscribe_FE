@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from "./../elements/Gird";
+import Grid from "../elements/Grid";
 import Image from "../elements/Image";
 import { useNavigate } from "react-router";
 
@@ -23,7 +23,7 @@ const Header = () => {
         </Grid>
         <Grid
           onClick={() => {
-            navigate("/login");
+            navigate("/signup");
           }}
         >
           회원가입

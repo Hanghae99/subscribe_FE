@@ -2,9 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Button = (props) => {
-  const { width, height, margin, bgColor } = props;
+  const { width, height, margin, bgColor, onClick } = props;
   const styles = { width, height, bgColor, margin };
-  return <Btn {...styles}>{props.children}</Btn>;
+  return (
+    <Btn onClick={onClick} {...styles}>
+      {props.children}
+    </Btn>
+  );
 };
 
 const Btn = styled.button`
