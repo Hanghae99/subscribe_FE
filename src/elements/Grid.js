@@ -12,9 +12,13 @@ const Grid = (props) => {
     padding,
     textAlign,
     lineHeight,
-    onClick,
+    _onClick,
+    bg,
+    maxWidth,
+    maxHeight,
   } = props;
   const styles = {
+    bg,
     width,
     height,
     margin,
@@ -24,19 +28,29 @@ const Grid = (props) => {
     padding,
     textAlign,
     lineHeight,
+    maxWidth,
+    maxHeight,
   };
 
   return (
-    <Box {...styles} onClick={onClick}>
+    <Box {...styles} onClick={_onClick}>
       {props.children}
     </Box>
   );
+};
+
+Grid.defaultProps = {
+  width: "100%",
+  height: "100%",
 };
 
 const Box = styled.div`
   box-sizing: border-box;
   width: ${(props) => `${props.width}`};
   height: ${(props) => `${props.height}`};
+  // height: '100%',
+  ${(props) => (props.maxWidth ? `max-width: ${props.maxWidth};` : null)}
+  ${(props) => (props.bg ? `background-color: ${props.bg};` : null)}
   ${(props) => (props.margin ? `margin: ${props.margin};` : null)}
   ${(props) => (props.radius ? `border-radius: ${props.radius};` : null)}
   ${(props) => (props.padding ? `padding: ${props.padding};` : null)}

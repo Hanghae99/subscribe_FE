@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const token = sessionStorage.getItem("token");
+// const token = sessionStorage.getItem("token");
 
 const instance = axios.create({
-  baseURL: "url",
+  baseURL: "http://15.164.96.141",
   headers: {
     "content-type": "applicaton/json;charset=UTF-8",
-    accept: "application/json",
-    Authorization: token,
+    'accept': "application/json",
+    // 'Authorization': token,
   },
 });
 
@@ -18,13 +18,14 @@ export const apis = {
         "content-type": "applicaton/json;charset=UTF-8",
         accept: "application/json",
       },
-    }),
+    }), 
+  kakaoLogin: (code)=> instance.get('/user/kakao/callback?code=${code}'),
   isLogin: () =>
     instance.get("/user/loginCheck", {
       headers: {
         "content-type": "applicaton/json;charset=UTF-8",
         accept: "application/json",
-        Authorization: token,
+        // Authorization: token,
       },
     }),
 };
