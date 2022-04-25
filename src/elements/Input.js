@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Grid from "./Gird";
+import Grid from "./Grid";
 
 const Input = (props) => {
   const { width, height, name, type, border, _onChange, placeholder, label } =
