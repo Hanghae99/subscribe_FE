@@ -16,6 +16,8 @@ const Grid = (props) => {
     bg,
     maxWidth,
     maxHeight,
+    fontWeight,
+    fontSize,
   } = props;
   const styles = {
     bg,
@@ -30,6 +32,8 @@ const Grid = (props) => {
     lineHeight,
     maxWidth,
     maxHeight,
+    fontWeight,
+    fontSize,
   };
 
   return (
@@ -48,7 +52,6 @@ const Box = styled.div`
   box-sizing: border-box;
   width: ${(props) => `${props.width}`};
   height: ${(props) => `${props.height}`};
-  // height: '100%',
   ${(props) => (props.maxWidth ? `max-width: ${props.maxWidth};` : null)}
   ${(props) => (props.bg ? `background-color: ${props.bg};` : null)}
   ${(props) => (props.margin ? `margin: ${props.margin};` : null)}
@@ -61,6 +64,8 @@ const Box = styled.div`
       : null}
   ${(props) => (props.textAlign ? `text-align: center;` : null)}
   ${(props) => (props.lineHeight ? `line-height: ${props.lineHeight};` : null)}
+  ${(props) => (props.fontSize ? `font-size: ${props.fontSize};` : null)}
+  ${(props) => (props.fontWeight ? `font-weight: ${props.fontWeight};` : null)}
 `;
 
 export default Grid;
