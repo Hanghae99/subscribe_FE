@@ -8,9 +8,9 @@ const Profile = (props) => {
     <Grid
       width="240px"
       height="60px"
-      border="1px solid black"
       radius="12px"
       margin="0 auto"
+      bg="#F2F2F2"
       isFlex
     >
       <Grid width="214px" height="45px" isFlex margin="7.5px auto">
@@ -24,22 +24,26 @@ const Profile = (props) => {
             <Grid
               width="53px"
               height="19px"
-              border="1px solid green"
-              bgColor="#ffffff"
+              bg="#ffffff"
               textAlign
               lineHeight="19px"
               radius="10px"
+              fontWeight="500"
+              fontSize="12px"
             >
               lv.100
             </Grid>
             <p
               style={{
                 width: "166px",
-                heigh: "22px",
+                height: "22px",
                 margin: "4px 0",
+                fontSize: "18px",
+                lineHeight: "22px",
+                fontWeight: 500,
               }}
             >
-              가나다라마바사
+              가나다라마바사아자
             </p>
           </div>
         </Grid>

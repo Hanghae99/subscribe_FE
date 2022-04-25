@@ -9,12 +9,15 @@ import "react-circular-progressbar/dist/styles.css";
 const Progress = (props) => {
   const { width, height, percent } = props;
   const styles = { width, height };
-
+  const percentage = 66;
   return (
     <Box {...styles}>
       <CircularProgressbarWithChildren
-        value={66}
-        styles={buildStyles({ pathColor: "black" })}
+        value={percentage}
+        styles={buildStyles({
+          pathColor: "black",
+          trailColor: `rgba(255, 255, 255, ${percentage / 100})`,
+        })}
       >
         {props.children}
       </CircularProgressbarWithChildren>
