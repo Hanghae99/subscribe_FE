@@ -7,6 +7,7 @@ import Main from "../page/Main";
 import Detail from "./../page/Detail";
 import Board from "./../page/Board";
 import PostDetail from "./../page/PostDetail";
+import Kakao from './Kakao';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/detail" element={<Detail />} />
         <Route path="/board" element={<Board />} />
         <Route path="/postdetail" element={<PostDetail />} />
+        <Route path="/user/kakao/callback" element={<Kakao />} />
+        {/* // component={Kakao}></Route> */}
       </Routes>
     </BrowserRouter>
   );
