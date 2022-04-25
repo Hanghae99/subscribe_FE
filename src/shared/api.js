@@ -3,7 +3,7 @@ import axios from "axios";
 // const token = sessionStorage.getItem("token");
 
 const instance = axios.create({
-  baseURL: "http://3.35.208.142",
+  baseURL: "http://15.164.96.141",
   headers: {
     "content-type": "applicaton/json;charset=UTF-8",
     'accept': "application/json",

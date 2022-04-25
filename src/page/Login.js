@@ -31,7 +31,7 @@ const Login = (props) => {
 
   return (
     <Grid>
-      <Desktop>
+      {/* <Desktop> */}
         <Grid bg='orange' height="100%" isFlex padding='0 50px'>
           <Grid isFlex margin='0 25px 0 0' height="100%" >
               <Image src='https://user-images.githubusercontent.com/91959791/165069079-375ac8d6-db36-40a0-b81a-a6ee1e6bdff6.jpeg' width='100%'/>
@@ -60,10 +60,10 @@ const Login = (props) => {
             </a>
           </Grid>
         </Grid>
-      </Desktop>
+      {/* </Desktop> */}
       
 
-      <Mobile>
+      {/* <Mobile>
         <Grid bg='green' height="100%" padding='0 50px'>
           <Grid margin='0 25px 0 0' height="100%" >
               <Image src='https://user-images.githubusercontent.com/91959791/165069079-375ac8d6-db36-40a0-b81a-a6ee1e6bdff6.jpeg' width='100%'/>
@@ -91,7 +91,7 @@ const Login = (props) => {
             }}>move_to_sign_up</Button>
           </Grid>
         </Grid>
-      </Mobile>
+      </Mobile> */}
     </Grid>
   );
 };
