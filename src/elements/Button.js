@@ -37,7 +37,6 @@ const Btn = styled.button`
   width: ${(props) => `${props.width}`};
   height: ${(props) => `${props.height}`};
   border: ${(props) => props.border};
-  // border: none;
   outline: none;
   box-sizing: border-box;
   font-size: 16px;
