@@ -8,6 +8,7 @@ import Detail from "./../page/Detail";
 import Board from "./../page/Board";
 import PostDetail from "./../page/PostDetail";
 import Kakao from './Kakao';
+import Naver from './Naver';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/board" element={<Board />} />
         <Route path="/postdetail" element={<PostDetail />} />
         <Route path="/user/kakao/callback" element={<Kakao />} />
+        <Route path="/user/naver/callback" element={<Naver />} />
         {/* // component={Kakao}></Route> */}
       </Routes>
     </BrowserRouter>

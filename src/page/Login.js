@@ -1,7 +1,9 @@
 import React from "react";
 
-import { KAKAO_AUTH_URL } from "../shared/KakaoOAuth";
+import GoogleLogin from 'react-google-login';
+import { KAKAO_AUTH_URL, NAVER_AUTH_URL } from "../shared/KakaoOAuth";
 import { Desktop, Mobile } from "../shared/MediaQuery";
+import Google from "../shared/Google";
 
 import Grid from "./../elements/Grid";
 import Input from "../elements/Input";
@@ -88,6 +90,10 @@ const Login = (props) => {
           <a href={KAKAO_AUTH_URL}>
             <span>카카오로그인</span>
           </a>
+          <a href={NAVER_AUTH_URL}>
+            <span>네이버로그인</span>
+          </a>
+          <Google/>
         </Grid>
       </Grid>
       {/* </Desktop> */}
