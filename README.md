@@ -3,6 +3,7 @@
 - yarn add axios
 - yarn add react-responsive
 - yarn add react-circular-progressbar
+- yarn add react-google-login
 
 # 04 25 작업
 
@@ -10,3 +11,7 @@
 - login 페이지 반응형 테스트
 - 카카오 소셜 로그인 구현
 - Header의 Profile : react-circular-progressbar 라이브러리를 활용한 원형 프로그레스바 제작
+
+# 04 26 작업
+
+- 구글, 네이버 소셜 로그인 1차 작업
