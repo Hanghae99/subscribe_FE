@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "../elements/Grid";
 const { kakao } = window;
 
 //지도생성함수
 export const KakaoMap = (props) => {
+  const [kakaoMap, setKakaoMap] = useState(null);
   const { width, height, margin, keyword } = props;
 
   useEffect(() => {
-    var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-
     const mapBox = document.getElementById("myMap"); //지도를 표시할 div
     const options = {
       center: new kakao.maps.LatLng(37.5666805, 126.9784147),
@@ -16,17 +15,25 @@ export const KakaoMap = (props) => {
     };
 
     const map = new kakao.maps.Map(mapBox, options);
+    setKakaoMap(map);
+  }, []);
+
+  useEffect(() => {
+    if (kakaoMap === null) {
+      return;
+    }
+    var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 
     const ps = new kakao.maps.services.Places();
 
     function placeSearchCB(data, status, pagination) {
       if (status === kakao.maps.services.Status.OK) {
         const bounds = new kakao.maps.LatLngBounds();
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
           displayMarker(data[i]);
           bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
         }
-        map.setBounds(bounds);
+        kakaoMap.setBounds(bounds);
       }
     }
     ps.keywordSearch(keyword, placeSearchCB);
@@ -34,7 +41,7 @@ export const KakaoMap = (props) => {
     function displayMarker(place) {
       // 마커를 생성하고 지도에 표시합니다
       var marker = new kakao.maps.Marker({
-        map: map,
+        map: kakaoMap,
         position: new kakao.maps.LatLng(place.y, place.x),
       });
 
@@ -46,7 +53,7 @@ export const KakaoMap = (props) => {
             place.place_name +
             "</div>"
         );
-        infowindow.open(map, marker);
+        infowindow.open(kakaoMap, marker);
       });
     }
   }, [keyword]);
