@@ -32,7 +32,7 @@ export const KakaoMap = (props) => {
     if (kakaoMap === null) {
       return;
     }
-    var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+    const infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 
     const ps = new kakao.maps.services.Places();
 
@@ -50,7 +50,7 @@ export const KakaoMap = (props) => {
 
     function displayMarker(place) {
       // 마커를 생성하고 지도에 표시합니다
-      var marker = new kakao.maps.Marker({
+      const marker = new kakao.maps.Marker({
         map: kakaoMap,
         position: new kakao.maps.LatLng(place.y, place.x),
       });
@@ -70,6 +70,3 @@ export const KakaoMap = (props) => {
 
   return <Grid width={width} height={height} margin={margin} id="myMap"></Grid>;
 };
-
-//지도검색함수
-export const Search = (props) => {};
