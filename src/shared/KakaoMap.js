@@ -17,17 +17,15 @@ export const KakaoMap = (props) => {
     };
 
     const map = new kakao.maps.Map(mapBox, options);
-
+    const center = map.getCenter();
     kakao.maps.event.addListener(
       map,
       "drag",
       _.throttle(function (e) {
-        console.log(
-          "위도: " + map.getCenter().getLat(),
-          "경도: " + map.getCenter().getLng()
-        );
+        console.log("위도: " + center.getLat(), "경도: " + center.getLng());
       }, 1000)
     );
+    setKakaoMap(map);
   }, []);
 
   useEffect(() => {
