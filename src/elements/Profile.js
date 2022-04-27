@@ -9,7 +9,7 @@ const Profile = (props) => {
       width="240px"
       height="60px"
       radius="12px"
-      margin="0 auto"
+      margin="10px 0"
       bg="#F2F2F2"
       isFlex
     >

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Icon = (props) => {
-  const { type, width, height } = props;
-  const styles = { width, height };
+  const { type, width, height, maxWidth, maxHeight } = props;
+  const styles = { width, height, maxWidth, maxHeight };
   return (
     <Vector {...styles} viewBox="0 0 40 40" fill="none">
       <rect width="40" height="40" rx="20" fill="white" />
@@ -15,7 +15,9 @@ const Icon = (props) => {
 };
 const Vector = styled.svg`
   width: ${(props) => `${props.width}`};
+  max-width: ${(props) => `${props.maxWidth}`};
   height: ${(props) => `${props.height}`};
+  max-height:${(props) => `${props.maxHeight}`}
   ${(props) => (props.margin ? `margin: ${props.margin};` : null)}
   border-radius: 100%;
 `;

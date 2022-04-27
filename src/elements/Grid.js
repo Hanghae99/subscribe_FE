@@ -18,6 +18,7 @@ const Grid = (props) => {
     maxHeight,
     fontWeight,
     fontSize,
+    id,
   } = props;
   const styles = {
     bg,
@@ -37,7 +38,7 @@ const Grid = (props) => {
   };
 
   return (
-    <Box {...styles} onClick={_onClick}>
+    <Box {...styles} onClick={_onClick} id={id}>
       {props.children}
     </Box>
   );
