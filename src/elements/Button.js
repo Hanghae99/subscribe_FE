@@ -39,7 +39,6 @@ const Btn = styled.button`
   outline: none;
   box-sizing: border-box;
   font-size: 16px;
-
   color: ${(props) => props.color};
   ${(props) => (props.margin ? `margin: ${props.margin};` : null)}
   ${(props) => (props.radius ? `border-radius: ${props.radius};` : null)}

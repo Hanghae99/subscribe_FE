@@ -1,7 +1,9 @@
 import React from "react";
 
-import { KAKAO_AUTH_URL } from "../shared/KakaoOAuth";
+import GoogleLogin from 'react-google-login';
+import { KAKAO_AUTH_URL, GOOGLE_AUTH_URL, NAVER_AUTH_URL } from "../shared/SocialOAuth";
 import { Desktop, Mobile } from "../shared/MediaQuery";
+import Google from "../components/Google";
 
 import Grid from "./../elements/Grid";
 import Input from "../elements/Input";
@@ -88,39 +90,14 @@ const Login = (props) => {
           <a href={KAKAO_AUTH_URL}>
             <span>카카오로그인</span>
           </a>
+          <a href={GOOGLE_AUTH_URL}>
+            <span>구글로그인</span>
+          </a>
+          <a href={NAVER_AUTH_URL}>
+            <span>네이버로그인</span>
+          </a>
         </Grid>
       </Grid>
-      {/* </Desktop> */}
-
-      {/* <Mobile>
-        <Grid bg='green' height="100%" padding='0 50px'>
-          <Grid margin='0 25px 0 0' height="100%" >
-              <Image src='https://user-images.githubusercontent.com/91959791/165069079-375ac8d6-db36-40a0-b81a-a6ee1e6bdff6.jpeg' width='100%'/>
-          </Grid>
-          <Grid bg='white' border="1px solid black" margin="0 auto" maxWidth='500px' height="100%" >
-            <Grid padding='16px 0 0'>
-              <Input label='아이디' placeholder='아이디를 입력해주세요.' _onChange={(e) => {
-                // setId(e.target.value);
-                console.log(e.target.value);
-              }}/>
-            </Grid>
-            <Grid padding='16px 0 25px'>
-              <Input label='비밀번호' type='password' placeholder='비밀번호를 입력해주세요.' _onChange={(e) => {
-                // setPwd(e.target.value);
-                console.log(e.target.value);
-              }}/>
-            </Grid>
-            <Button border='none' bgColor='#212121' color='#fff'_onClick={() => {
-              console.log('로그인!');
-              // login();
-            }}>log_in</Button>
-            <Button border='none' bgColor='#212121' color='#fff'_onClick={() => {
-              console.log('회원가입페이지로~!');
-              // login();
-            }}>move_to_sign_up</Button>
-          </Grid>
-        </Grid>
-      </Mobile> */}
     </Grid>
   );
 };
