@@ -23,6 +23,7 @@
 - 소셜 로그인 api 코드 api.js 파일에 통합
 - components 폴더의 파일들 한번에 import 가능하게 component.js 생성
 - 카카오 지도 띄우기, 검색 1차 작업
+- 카카오 지도 드래그 할 때, 중심좌표의 위도, 경도 받아오기
 
 # trouble shooting
 

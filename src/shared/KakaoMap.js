@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Grid from "../elements/Grid";
+import _ from "lodash";
+
 const { kakao } = window;
 
 //지도생성함수
@@ -15,7 +17,17 @@ export const KakaoMap = (props) => {
     };
 
     const map = new kakao.maps.Map(mapBox, options);
-    setKakaoMap(map);
+
+    kakao.maps.event.addListener(
+      map,
+      "drag",
+      _.throttle(function (e) {
+        console.log(
+          "위도: " + map.getCenter().getLat(),
+          "경도: " + map.getCenter().getLng()
+        );
+      }, 1000)
+    );
   }, []);
 
   useEffect(() => {
