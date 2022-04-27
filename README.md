@@ -23,3 +23,7 @@
 - 소셜 로그인 api 코드 api.js 파일에 통합
 - components 폴더의 파일들 한번에 import 가능하게 component.js 생성
 - 카카오 지도 띄우기, 검색 1차 작업
+
+# trouble shooting
+
+- 0428: 카카오지도 검색 기능에서 검색어 초기 값을 null로 두면 400 에러 발생
