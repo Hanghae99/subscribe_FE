@@ -6,17 +6,20 @@ import _ from "lodash";
 import { KakaoMap } from "../shared/KakaoMap";
 
 const Main = () => {
-  const [keyword, setKeyword] = useState("");
-  const [search, setSearch] = useState("");
+  const [keyword, setKeyword] = useState(null);
+  const [search, setSearch] = useState(null);
 
   const searchWord = useCallback(
     _.debounce((e) => {
       setKeyword(e.target.value);
-    }, 1000),
+    }, 100),
     []
   );
 
   const onClick = () => {
+    if (!keyword) {
+      return alert("검색어를 입력해주세요");
+    }
     setSearch(keyword);
   };
 
