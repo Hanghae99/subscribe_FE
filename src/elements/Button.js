@@ -29,7 +29,7 @@ Button.defaultProps = {
   bgColor: "transparent",
   color: "#212121",
   border: "1px solid #212121",
-  radius: false,
+  radius: 'none',
   margin: false,
 };
 
