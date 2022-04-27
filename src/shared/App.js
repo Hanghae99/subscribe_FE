@@ -7,8 +7,9 @@ import Main from "../page/Main";
 import Detail from "./../page/Detail";
 import Board from "./../page/Board";
 import PostDetail from "./../page/PostDetail";
-import Kakao from './Kakao';
-import Naver from './Naver';
+
+// social login
+import { KakaoLogin, GoogleLogin, NaverLogin, Naver } from '../components/component';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
         <Route path="/detail" element={<Detail />} />
         <Route path="/board" element={<Board />} />
         <Route path="/postdetail" element={<PostDetail />} />
-        <Route path="/user/kakao/callback" element={<Kakao />} />
-        <Route path="/user/naver/callback" element={<Naver />} />
-        {/* // component={Kakao}></Route> */}
+        <Route path="/user/kakao/callback" element={<KakaoLogin />} />
+        <Route path="/user/google/callback" element={<GoogleLogin />} />
+        <Route path="/user/naver/Login" element={<Naver />} />
+        <Route path="/user/naver/callback" element={<NaverLogin />} />
       </Routes>
     </BrowserRouter>
   );
