@@ -14,10 +14,11 @@ export const KakaoMap = (props) => {
       center: new kakao.maps.LatLng(37.5666805, 126.9784147),
       level: 3,
     };
-    // 지도 생성
+
     const map = new kakao.maps.Map(mapBox, options);
 
     const ps = new kakao.maps.services.Places();
+
     function placeSearchCB(data, status, pagination) {
       if (status === kakao.maps.services.Status.OK) {
         const bounds = new kakao.maps.LatLngBounds();
@@ -28,6 +29,7 @@ export const KakaoMap = (props) => {
         map.setBounds(bounds);
       }
     }
+    ps.keywordSearch(keyword, placeSearchCB);
 
     function displayMarker(place) {
       // 마커를 생성하고 지도에 표시합니다
@@ -47,8 +49,6 @@ export const KakaoMap = (props) => {
         infowindow.open(map, marker);
       });
     }
-
-    ps.keywordSearch(keyword, placeSearchCB);
   }, [keyword]);
 
   return <Grid width={width} height={height} margin={margin} id="myMap"></Grid>;

@@ -6,7 +6,8 @@ import _ from "lodash";
 import { KakaoMap } from "../shared/KakaoMap";
 
 const Main = () => {
-  const [keyword, setKeyword] = useState("서울시청");
+  const [keyword, setKeyword] = useState("");
+  const [search, setSearch] = useState("");
 
   const searchWord = useCallback(
     _.debounce((e) => {
@@ -15,18 +16,22 @@ const Main = () => {
     []
   );
 
+  const onClick = () => {
+    setSearch(keyword);
+  };
+
   return (
     <>
       <div>
         <Input width="300px" margin="0 230px" _onChange={searchWord} />
-        <Button width="100px" margin="0 230px">
+        <Button width="100px" margin="0 230px" _onClick={onClick}>
           검색
         </Button>
         <KakaoMap
           width="800px"
           height="800px"
           margin="10px auto"
-          keyword={keyword}
+          keyword={search}
         />
       </div>
     </>
