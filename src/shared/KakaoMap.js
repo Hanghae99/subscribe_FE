@@ -4,12 +4,12 @@ import _ from "lodash";
 
 const { kakao } = window;
 
-//지도생성함수
 export const KakaoMap = (props) => {
   const [kakaoMap, setKakaoMap] = useState(null);
   const { width, height, margin, keyword } = props;
 
   useEffect(() => {
+    //지도생성함수
     const mapBox = document.getElementById("myMap"); //지도를 표시할 div
     const options = {
       center: new kakao.maps.LatLng(37.5666805, 126.9784147),
@@ -29,6 +29,7 @@ export const KakaoMap = (props) => {
   }, []);
 
   useEffect(() => {
+    //지도에 마커 생성 함수
     if (kakaoMap === null) {
       return;
     }
