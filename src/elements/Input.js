@@ -3,9 +3,20 @@ import styled from "styled-components";
 import Grid from "./Grid";
 
 const Input = (props) => {
-  const { width, height, name, type, border, _onChange, placeholder, label } =
-    props;
-  const styles = { width, height, border };
+  const {
+    width,
+    height,
+    name,
+    type,
+    border,
+    margin,
+    maxWidth,
+    padding,
+    _onChange,
+    placeholder,
+    label,
+  } = props;
+  const styles = { width, height, border, margin, maxWidth, padding };
 
   return (
     <Grid>
@@ -26,16 +37,17 @@ Input.defaultProps = {
   _onChange: () => {},
   type: "text",
   border: "1px solid #212121",
+  padding: "12px 4px",
 };
 
 const InfoInput = styled.input`
   border: ${(props) => props.border};
-  width: 100%;
-  padding: 12px 4px;
+  padding: ${(props) => props.padding};
   box-sizing: border-box;
   font-size: 16px;
   outline: none;
   width: ${(props) => `${props.width}`};
+  max-width: ${(props) => `${props.maxWidth}`};
   height: ${(props) => `${props.height}`};
   ${(props) => (props.margin ? `margin: ${props.margin};` : null)}
 `;

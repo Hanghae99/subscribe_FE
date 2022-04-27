@@ -7,9 +7,9 @@ import {
 import "react-circular-progressbar/dist/styles.css";
 
 const Progress = (props) => {
-  const { width, height, percent } = props;
-  const styles = { width, height };
-  const percentage = 66;
+  const { width, height, maxWidth, maxHeight, percent } = props;
+  const styles = { width, height, maxWidth, maxHeight };
+  const percentage = 40;
   return (
     <Box {...styles}>
       <CircularProgressbarWithChildren
@@ -28,6 +28,8 @@ const Progress = (props) => {
 const Box = styled.div`
   width: ${(props) => `${props.width}`};
   height: ${(props) => `${props.height}`};
+  max-width: ${(props) => `${props.maxWidth}`};
+  max-height: ${(props) => `${props.maxHeight}`};
 `;
 
 export default Progress;

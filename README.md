@@ -14,10 +14,12 @@
 
 # 04 26 작업
 
+- elements 요소들 props 추가
 - 구글, 네이버 소셜 로그인 1차 작업
 
 # 04 28 작업
 
 - 소셜 로그인 서버와 연결까지 완료 (카카오, 네이버, 구글)
 - 소셜 로그인 api 코드 api.js 파일에 통합
-- components 폴더의 파일들 한번에 import 가능하게 component.js 생성 
+- components 폴더의 파일들 한번에 import 가능하게 component.js 생성
+- 카카오 지도 띄우기, 검색 1차 작업
